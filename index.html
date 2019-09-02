@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>ClassTeacher</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="css/animate.css">
+   <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script type="text/javascript" src="js/jquery.js"></script>
+   <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="js/enableDragMobile.js"></script>
+</head>
+
+<body>
+   <!-- <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;"> -->
+   <div class="wrapper">
+      <div class="innerWrapper">
+         <div class="logoWrapper">
+            <a href="index.html">
+               <img src="img/logo.png">
+            </a>
+            <h2 id="activityText">Activity</h2>
+            <!-- <h2 id="LetterText"></h2> -->
+         </div>
+         <h3 id='fillTheBlank'>Drag the correct option to their corresponding box</h3>
+         <div class="questionContainer">
+            <img src="img/body.png" id='bodyImg' />
+            <div class="dropContainer stomacDrop">
+               <div class="drop-box" id="stomac"><span>Stomac</span></div>
+               <div class="drop-line"></div>
+            </div>
+            <div class="dropContainer neckDrop">
+               <div class="drop-box" id="neck"><span>Neck</span></div>
+               <div class="drop-line"></div>
+            </div>
+            <div class="dropContainer headDrop">
+               <div class="drop-line"></div>
+               <div class="drop-box" id="head"><span>Head</div>
+            </div>
+            <div class="dropContainer armDrop">
+               <div class="drop-box" id="arm"><span>Arm</span></div>
+               <div class="drop-line"></div>
+            </div>
+            <div class="dropContainer footDrop">
+               <div class="drop-line"></div>
+               <div class="drop-box" id="foot"><span>Foot</span></div>
+            </div>
+            <div class="dropContainer elboDrop">
+               <div class="drop-line"></div>
+               <div class="drop-box" id="elbo"><span>Elbo</span></div>
+            </div>
+            <div class="dropContainer ankleDrop">
+               <div class="drop-box" id="ankle"><span>Ankle</span></div>
+               <div class="drop-line"></div>
+            </div>
+            <div class="dropContainer kneeDrop">
+               <div class="drop-box" id="knee"><span>Knee</span></div>
+               <div class="drop-line"></div>
+            </div>
+            <div class="dropContainer handDrop">
+               <div class="drop-line"></div>
+               <div class="drop-box" id="hand"><span>Hand</span></div>
+            </div>
+            <div class="dropContainer legDrop">
+               <div class="drop-line"></div>
+               <div class="drop-box" id="leg"><span>Leg</span></div>
+            </div>
+         </div>
+         <div class="suggestionContainer">
+            <div>
+               <p class="dragg " data-id="foot">Foot</p>
+               <p class="dragg " data-id="neck">Neck</p>
+               <p class="dragg " data-id="hand">Hand</p>
+               <p class="dragg " data-id="elbo">Elbo</p>
+               <p class="dragg " data-id="ankle">Ankle</p>
+               <p class="dragg " data-id="stomac">Stomac</p>
+               <p class="dragg " data-id="knee">Knee</p>
+               <p class="dragg " data-id="head">Head</p>
+               <p class="dragg " data-id="leg">Leg</p>
+               <p class="dragg " data-id="arm">Arm</p>
+            </div>
+         </div>
+         <div class="controls">
+            <button id="check">Check</button>
+            <button id="answer">Answer</button>
+            <button id="reset">Reset</button>
+         </div>
+      </div>
+   </div>
+   <script type="text/javascript" src="data/data.js"></script>
+   <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
