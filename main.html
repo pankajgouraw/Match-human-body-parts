@@ -4,6 +4,7 @@
 <head>
    <title>ClassTeacher</title>
    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" type="text/css" href="css/animate.css">
    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
    <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -12,13 +13,12 @@
    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
    <script type="text/javascript" src="js/enableDragMobile.js"></script>
 </head>
-
-<body>
-   <!-- <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;"> -->
+<!-- <body> -->
+   <body oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
    <div class="wrapper">
       <div class="innerWrapper">
          <div class="logoWrapper">
-            <a href="index.html">
+            <a href="main.html">
                <img src="img/logo.png">
             </a>
             <h2 id="activityText">Activity</h2>
@@ -83,7 +83,7 @@
             </div>
          </div>
          <div class="controls">
-            <button id="check">Check</button>
+            <button id="check">Check <span id="alert">Please fill all the fields</span></button>
             <button id="answer">Answer</button>
             <button id="reset">Reset</button>
          </div>

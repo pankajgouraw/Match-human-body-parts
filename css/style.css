@@ -17,11 +17,7 @@ body {
 	max-width: 960px;
 	margin: 0px auto;
 	position: relative;
-/*	background-image: url('../img/bg.jpg');
-	background-size: cover;
-	background-position: unset;
-	background-repeat: no-repeat;*/
-	background-color: #dcdcdc;
+	background-color: #fff;
 }
 
 .innerWrapper {
@@ -37,7 +33,7 @@ body {
 	text-align: center;
 	font-weight: bold;
 	font-family: cursive;
-	font-size: 20px;
+	font-size: 22px;
 	margin-bottom: 17px;
 }
 
@@ -52,7 +48,6 @@ body {
 	text-align: center;
 	position: relative;
 }
-
 
 /*.dropSuggestions{display: flex;}*/
 
@@ -103,6 +98,7 @@ body {
 	font-size: 17px;
 	margin: 10px;
 	font-family: sans-serif;
+	cursor:pointer;
 }
 
 .suggestionContainer div {
@@ -129,6 +125,7 @@ body {
 	outline: none;
 	background-position: center;
 	transition: background 0.8s;
+	margin: 0px 5px;
 }
 
 .controls {
@@ -188,55 +185,16 @@ body {
 	background: #000;
 }
 
-.stomacDrop {
-	top: 36%;
-	left: 29%;
-}
-
-.neckDrop {
-top: 10%;
-left: 28.4%;
-}
-
-.headDrop {
-	top: 2%;
-	left: 51%;
-}
-
-.armDrop {
-	top: 24%;
-	left: 25%;
-}
-
-.footDrop {
-	top: 89%;
-	left: 52%;
-}
-
-.elboDrop {
-top: 31%;
-left: 55%;
-}
-
-.ankleDrop {
-	top: 86%;
-	left: 28%;
-}
-
-.handDrop {
-	top: 48%;
-	left: 56%;
-}
-
-.kneeDrop {
-	top: 68%;
-	left: 27%;
-}
-
-.legDrop {
-top: 72%;
-left: 52%;
-}
+.stomacDrop {top: 36%;left: 29%;}
+.neckDrop {top: 10%;left: 28.4%;}
+.headDrop {top: 2%;left: 51%;}
+.armDrop {top: 24%;left: 25%;}
+.footDrop {top: 89%;left: 52%;}
+.elboDrop {top: 31%;left: 55%;}
+.ankleDrop {top: 86%;left: 28%;}
+.handDrop {top: 48%;left: 56%;}
+.kneeDrop {top: 68%;left: 27%;}
+.legDrop {top: 72%;left: 52%;}
 
 .drop-box img{ position: absolute; }
 
@@ -253,29 +211,128 @@ right: -35px;
 left: -35px;	
 }
 
-@media screen and (max-width: 500px) {
-	.dropSuggestions {
-		flex-wrap: wrap;
-	}
+#check {position: relative;}
+#alert {
+	position: absolute;
+	top: -42px;
+	background: black;
+	width: 180px;
+	padding: 10px;
+	left: -59px;
+	border-radius: 5px;
+	display: none;
+}
+
+
+
+/*media query code*/
+@media screen and (max-width: 960px) {
+.stomacDrop {top: 36%;left: 17%;}
+.neckDrop {top: 10%;left: 16.4%;}
+.headDrop {top: 2%;left: 52%;}
+.armDrop {top: 24%;left: 10%;}
+.footDrop {top: 89%;left: 54%;}
+.elboDrop {top: 31%;left: 59%;}
+.ankleDrop {top: 86%;left: 15%;}
+.handDrop {top: 48%;left: 61%;}	
+.kneeDrop {top: 68%;left: 14%;}
+.legDrop {top: 72%;left: 52%;}
+.dropContainer .drop-line {width: 70px;}
+.questionContainer {width: 500px;margin: auto;}
+.suggestionContainer div p{margin: 6px;}
+}
+
+@media screen and (max-width: 568px) {
 	.logoWrapper img {
 		width: 100px;
 	}
 	.logoWrapper h2 {
 		font-size: 20px;
 	}
-	#fillTheBlank {
-		font-size: 20px;
+	.questionContainer {
+    width: 260px;
+    margin: auto;
+    }
+    #bodyImg {
+    width: 90px;
 	}
-	.suggData {
-		margin: 3px;
-		width: 40px;
-		height: 40px;
+	.suggestionContainer div{
+	    display: inline-block;
 	}
-	.imgContainer img {
-		width: 150px;
+	.suggestionContainer div p {
+	        margin: 3px;
+    font-size: 13px;
+    font-weight: bold;
 	}
+	.controls button {    padding: 9px 9px;}
+
+  .dropContainer .drop-box {
+
+    width: 52px;
+    height: 18px;
+}
+
+.drop-box span {
+    padding-top: 1px;
+    font-size: 15px;
+}
+#fillTheBlank {
+	    font-size: 15px;
+}
+
+.stomacDrop {    top: 38%;
+    left: 0%;}
+.neckDrop {top: 9%;left: 9%;}
+.headDrop {top: 0%;
+    left: 52%;}
+.armDrop {top: 24%;left: 1%;}
+.footDrop {top: 87%;
+    left: 54%;}
+.elboDrop {    top: 29%;
+    left: 60%;}
+.ankleDrop {    top: 84%;
+    left: 7%;}
+.handDrop {    top: 46%;
+    left: 63%;}	
+.kneeDrop { top: 65%;left: 6%;}
+.legDrop {top: 71%;
+    left: 54%;}
+.dropContainer .drop-line {
+    width: 30px;
+}
+
+.stomacDrop .drop-line{
+	    width: 55px;
 }
 
 
+.drop-box img {
+    position: absolute;
+    width: 16px;
+}
+
+.headDrop img, .elboDrop img, .handDrop img, .legDrop img, .footDrop img {
+right: -19px;	
+}
+
+.stomacDrop img, .neckDrop img, .kneeDrop img, .ankleDrop img, .armDrop img, .neckDrop img {
+left: -19px;	
+}
+
+#alert {
+    width: 139px;
+    left: -34px;
+    font-size: 9px;
+}
+
+.suggestionContainer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.controls {margin-top:0px;}
+}
 /*  // media quesry end here...*/
 

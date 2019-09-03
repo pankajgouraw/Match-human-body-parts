@@ -1,8 +1,5 @@
 $(function() {
 
-  let index = 0;
-  console.log($(".drop-box"));
-
   $("#activityText").text(header);
   $('.wrapper').css({'outline':borderColor});
   $('body').css({'background':bgColor});
@@ -27,17 +24,39 @@ $(function() {
                 var dragId = ui.draggable.attr("data-id");
                 $(".drop-box").removeClass(dragId);
                 $(this).addClass(dragId);
-                console.log(dragItem);
-                console.log("Data id is :" + dragId);
+                // console.log("Data id is :" + dragId);
             }
       }); 
   }  //end here drag and drop 
 
 dragDrop();
 
+// check on click
 $('#check').click(function(){
-  check();
-  $(".dragg" ).draggable({ disabled: true });
+      var index = 0;
+// check fields is blank or not
+      let dropBox = $(".drop-box");
+      dropBox.each(function(i){
+              let divClass = $(this).attr('class');
+              let noOfDivclass = divClass.split(' ');
+              let length = noOfDivclass.length;
+              if(length == 3){
+                index++;
+              }
+      });
+
+  if(index == 10){
+    check();
+    $(".dragg" ).draggable({ disabled: true });
+     console.log(index)
+  }else{
+    $('#alert').fadeIn();
+      setTimeout(function(){
+       $('#alert').fadeOut();
+      },1000)
+     // console.log("plase fill all the fields")
+     // console.log(index)
+  }
 });
 
 
@@ -72,6 +91,13 @@ $("#answer").click(function(){
 $("#reset").click(function(){
   location.reload();
 }); // End reset 
+
+
+
+
+
+
+
 
 
 });
