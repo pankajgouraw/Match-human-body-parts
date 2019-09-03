@@ -70,7 +70,7 @@ function check(){
         $('#'+getId).append("<img src='img/right.png' />");
        }else{
         $('#'+getId).append("<img src='img/wrong.png' />");
-       }
+       } 
     })
   } // End check question function
 
