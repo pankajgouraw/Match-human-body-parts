@@ -3,6 +3,7 @@ $(function() {
   $("#activityText").text(header);
   $('.wrapper').css({'outline':borderColor});
   $('body').css({'background':bgColor});
+  $('#fillTheBlank').css({'color':dragColor});
   // $('#LetterText').text(alphabate);
 
   $('.drop-box span').hide();
