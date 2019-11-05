@@ -17,7 +17,7 @@ body {
 	max-width: 960px;
 	margin: 0px auto;
 	position: relative;
-	background-color: #fff;
+	/*background-color: #fff;*/
 }
 
 .innerWrapper {
@@ -25,14 +25,14 @@ body {
 }
 
 .innerWrapper h2 {
-	font-family: cursive;
+	font-family: sans-serif;
 	font-weight: bold;
 }
 
 #fillTheBlank {
 	text-align: center;
 	font-weight: bold;
-	font-family: cursive;
+	font-family: sans-serif;
 	font-size: 22px;
 	margin-bottom: 17px;
 }
@@ -63,7 +63,7 @@ body {
 	font-size: 30px;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-family: cursive;
+	font-family: sans-serif;
 	cursor: pointer;
 }
 

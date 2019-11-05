@@ -3,6 +3,7 @@ $(function() {
   $("#activityText").text(header);
   $('.wrapper').css({'outline':borderColor});
   $('body').css({'background':bgColor});
+  $('.wrapper').css({'background':wrapperBG});
   $('#fillTheBlank').css({'color':dragColor});
   // $('#LetterText').text(alphabate);
 
@@ -14,19 +15,45 @@ $(function() {
   function dragDrop(){
       $('.dragg').draggable({
             revert: 'invalid',
-             cursor: "pointer"   
+            snapMode: 'inner', 
+            cursor: "pointer"  
       });
 
       $(".drop-box" ).droppable({
             accept:".dragg",
             drop: function (event, ui) {
+              // console.log($(ui.draggable));
                 let dragItem = event.target;
-                // ui.draggable.draggable({ disabled: true });
+                let $this = $(this);
+                  // check if drop  position alredy filled
+                  // let divClass = $this.attr('class');
+                  // let noOfDivclass = divClass.split(' ');
+                  // let length = noOfDivclass.length;
+                  // if(length == 3){
+                  //   console.log('ho gaya');
+                  //   ui.draggable.draggable('option','revert',true);
+                  //    // return false;
+                  // } 
+
+                //add the class of body parts name
                 var dragId = ui.draggable.attr("data-id");
                 $(".drop-box").removeClass(dragId);
                 $(this).addClass(dragId);
-                // console.log("Data id is :" + dragId);
-            }
+              
+
+                // centering on drop
+                
+                console.log($this);
+                ui.draggable.position({
+                  my: "center",
+                  at: "center",
+                  of: $this,
+                  using: function(pos) {
+                    $(this).animate(pos, "fast", "linear");
+                  }
+                });
+  
+            }  //end drop method
       }); 
   }  //end here drag and drop 
 
@@ -81,10 +108,6 @@ $("#answer").click(function(){
   $(".dragg").css({'opacity':0});
   $('.drop-box span').show();
   $('.drop-box img').hide();
-  // $(".dragg").animate({
-  //       top: "0px",
-  //       left: "0px"
-  //   });
 }); // end show answer
 
 
