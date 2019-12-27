@@ -1,16 +1,13 @@
 $(function() {
 
-  $("#activityText").text(header);
+  $("#activityText span").text(header);
   $('.wrapper').css({'outline':borderColor});
   $('body').css({'background':bgColor});
   $('.wrapper').css({'background':wrapperBG});
   $('#fillTheBlank').css({'color':dragColor});
   // $('#LetterText').text(alphabate);
-
   $('.drop-box span').hide();
 
-
-  
   // function for drag and drop
   function dragDrop(){
       $('.dragg').draggable({
@@ -22,36 +19,38 @@ $(function() {
       $(".drop-box" ).droppable({
             accept:".dragg",
             drop: function (event, ui) {
+              let divClass=null;
+              let noOfDivclass =null;
+              let length =null;
               // console.log($(ui.draggable));
                 let dragItem = event.target;
                 let $this = $(this);
-                  // check if drop  position alredy filled
-                  // let divClass = $this.attr('class');
-                  // let noOfDivclass = divClass.split(' ');
-                  // let length = noOfDivclass.length;
-                  // if(length == 3){
-                  //   console.log('ho gaya');
-                  //   ui.draggable.draggable('option','revert',true);
-                  //    // return false;
-                  // } 
-
-                //add the class of body parts name
-                var dragId = ui.draggable.attr("data-id");
-                $(".drop-box").removeClass(dragId);
-                $(this).addClass(dragId);
-              
-
-                // centering on drop
-                
-                console.log($this);
-                ui.draggable.position({
-                  my: "center",
-                  at: "center",
-                  of: $this,
-                  using: function(pos) {
-                    $(this).animate(pos, "fast", "linear");
-                  }
-                });
+                //  check if drop  position alredy filled
+                  divClass = $this.attr('class');
+                  noOfDivclass = divClass.split(' ');
+                  length = noOfDivclass.length;
+                  console.log('length',length)
+                  if(length == 3){
+                      console.log('run if  have three class')
+                    ui.draggable.draggable('option','revert',true);
+                    // return false;
+                  }else{
+                      //add the class of body parts name
+                      console.log('run if dont have three class')
+                      var dragId = ui.draggable.attr("data-id");
+                      $(".drop-box").removeClass(dragId);
+                      $(this).addClass(dragId);
+                      // centering on drop
+                      ui.draggable.position({
+                        my: "center",
+                        at: "center",
+                        of: $this,
+                        using: function(pos) {
+                          $(this).animate(pos, "fast", "linear");
+                        }
+                      });
+                      ui.draggable.draggable('option','revert',false);
+                 } 
   
             }  //end drop method
       }); 
@@ -75,6 +74,7 @@ $('#check').click(function(){
 
   if(index == 10){
     check();
+    $('#answer').show();
     $(".dragg" ).draggable({ disabled: true });
      console.log(index)
   }else{
